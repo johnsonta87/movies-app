@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import { getLatest } from '../api/services';
+import { getPopular } from '../api/services';
 
-export default function useFetchLatest() {
+export default function useFetchPopular() {
   const { isLoading, data, error } = useQuery({
-    queryKey: ['getLatest'],
-    queryFn: getLatest,
+    queryKey: ['getPopular'],
+    queryFn: getPopular,
   });
 
   return { isLoading, error, data };

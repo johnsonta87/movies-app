@@ -1,19 +1,11 @@
-import React, { useEffect } from 'react';
-
-import { useRecoilState } from 'recoil';
-import { useFetchLatest } from '../queries';
-import { latestState } from '../recoil/atom';
-import { Latest } from '../component';
+import { Latest, Popular } from '../component';
+import Container from '../component/common/Layouts/Container';
 
 export default function Dashboard() {
-  const [latest, setLatest] = useRecoilState(latestState);
-  const { data, isLoading } = useFetchLatest(550);
-
-  useEffect(() => {
-    if (data && !isLoading) {
-      setLatest(data);
-    }
-  }, [data, isLoading]);
-
-  return <Latest data={latest} />;
+  return (
+    <Container>
+      <Popular />
+      <Latest />
+    </Container>
+  );
 }

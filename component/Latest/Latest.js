@@ -1,16 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 
-export default function Latest({ data }) {
+// Hooks
+import { useFetchLatest } from '../../queries';
+
+// Components
+import MovieCardItem from '../common/Card/MovieCardItem';
+import Title from '../common/Title';
+
+export default function Latest() {
+  const [latest, setLatest] = useState();
+  const { data, isLoading } = useFetchLatest();
+
+  useEffect(() => {
+    if (data && !isLoading) {
+      setLatest(data);
+    }
+  }, [data, isLoading]);
+
   return (
     <div>
-      <h1>Latest</h1>
+      <Title title="Latest" />
 
-      {data.title}
+      <MovieCardItem data={latest} />
     </div>
   );
 }
-
-Latest.propTypes = {
-  data: PropTypes.object.isRequired,
-};
