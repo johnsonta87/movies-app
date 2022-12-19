@@ -15,7 +15,5 @@ export default function Dashboard() {
     }
   }, [data, isLoading]);
 
-  console.log(latest);
-
-  return <Latest list={latest} />;
+  return <Latest data={latest} />;
 }
