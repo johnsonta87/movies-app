@@ -5,7 +5,7 @@ import { useFetchLatest } from '../../queries';
 
 // Components
 import MovieCardItem from '../common/Card/MovieCardItem';
-import Title from '../common/Title';
+import Title from '../common/Title/Title';
 
 export default function Latest() {
   const [latest, setLatest] = useState();

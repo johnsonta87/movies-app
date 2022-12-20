@@ -2,7 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 import { FilterButtonStyle, FilterSelectorStyle } from './FilterSelectorStyles';
-import Title from '../common/Title';
+import Title from '../common/Title/Title';
 
 export default function FilterSelector({ heading, options }) {
   if (!options) {

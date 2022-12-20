@@ -4,7 +4,7 @@ import { RecoilRoot, useRecoilState, useRecoilValue } from 'recoil';
 import { ThemeProvider } from 'styled-components';
 import Dashboard from './views/Dashboard';
 
-import createGlobalStyle from './theme/global';
+import { GlobalStyle, theme } from './theme/global';
 
 const queryClient = new QueryClient();
 
@@ -12,7 +12,8 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
-        <ThemeProvider theme={createGlobalStyle}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
           <Dashboard />
           <StatusBar />
         </ThemeProvider>

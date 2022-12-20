@@ -11,7 +11,6 @@ export default function ContainerImage({ url, isRounded }) {
   return (
     <div style={styles.container}>
       <Image
-        style={styles.image(isRounded)}
         source={{
           uri: `http://image.tmdb.org/t/p/w185/${url}`,
         }}
@@ -25,12 +24,6 @@ const styles = StyleSheet.create({
     marginTop: '1em',
     marginBottom: '1em',
   },
-  image: (rounded) => ({
-    width: '150px',
-    height: '225px',
-    borderRadius: rounded ? '4px' : '0',
-    overflow: 'hidden',
-  }),
 });
 
 ContainerImage.propTypes = {

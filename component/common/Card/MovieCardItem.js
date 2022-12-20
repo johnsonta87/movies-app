@@ -2,8 +2,9 @@ import React from 'react';
 
 import { Text, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import ContainerImage from '../ContainerImage/ContainerImage';
 import formatDate from '../../../helpers/utils';
+import { MovieCardItemStyle } from './MovieCardItemStyles';
+import PosterImage from '../ContainerImage/PosterImage';
 
 export default function MovieCardItem({ data }) {
   if (!data) {
@@ -13,19 +14,21 @@ export default function MovieCardItem({ data }) {
   console.log(data);
 
   return (
-    <div style={styles.container}>
-      <ContainerImage url={data.poster_path} isRounded />
+    <MovieCardItemStyle>
+      <PosterImage url={data.poster_path} isRounded />
 
-      {data.title && <Text>{data.title}</Text>}
+      {data.title && <Text style={styles.text}>{data.title}</Text>}
       <br />
-      {data.release_date && <Text>{formatDate(data.release_date)}</Text>}
-    </div>
+      {data.release_date && (
+        <Text style={styles.text}>{formatDate(data.release_date)}</Text>
+      )}
+    </MovieCardItemStyle>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    width: '100%',
+  text: {
+    color: '#fff',
   },
 });
 
