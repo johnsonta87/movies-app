@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { useFetchPopular } from '../../queries';
 import MovieCardItem from '../common/Card/MovieCardItem';
-import Title from '../common/Title';
 
 export default function Popular() {
   const [list, setList] = useState([]);
@@ -19,14 +18,10 @@ export default function Popular() {
   }
 
   return (
-    <div>
-      <Title title="Popular" />
-
-      <div style={styles.list}>
-        {list.results.map((item) => (
-          <MovieCardItem key={item.id} data={item} />
-        ))}
-      </div>
+    <div style={styles.list}>
+      {list.results.map((item) => (
+        <MovieCardItem key={item.id} data={item} />
+      ))}
     </div>
   );
 }
