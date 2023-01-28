@@ -3,7 +3,7 @@ import { MoviesList, Filter } from '../component';
 import Container from '../component/common/Layouts/Container';
 
 export default function Dashboard() {
-  const [filters] = useState(['popular', 'trending', 'free']);
+  const [filters] = useState(['popular', 'trending', 'upcoming']);
 
   return (
     <Container>

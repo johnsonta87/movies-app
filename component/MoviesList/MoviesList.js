@@ -1,19 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
-import { Filter, Title } from '..';
+import { Title } from '..';
 import { useFetchList } from '../../queries';
 import { listState } from '../../recoil/atom';
 import MovieCardItem from '../common/Card/MovieCardItem';
 import { MoviesListStyles } from './MoviesListStyles';
 
 export default function MoviesList() {
-  const [popularFilter] = useState([
-    'streaming',
-    'on tv',
-    'for rent',
-    'in theatres',
-  ]);
-
   const [list, setList] = useState([]);
 
   const listTypeState = useRecoilValue(listState);
@@ -35,8 +28,7 @@ export default function MoviesList() {
 
   return (
     <div>
-      <Title title={listTypeState.type} />
-      <Filter options={popularFilter} isSimple isSecondaryQuery />
+      <Title title={`${listTypeState.type} Movies`} />
 
       <MoviesListStyles>
         {list.results.map((item) => (

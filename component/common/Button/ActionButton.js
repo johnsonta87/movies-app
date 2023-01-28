@@ -4,11 +4,7 @@ import { useSetRecoilState } from 'recoil';
 import { ActionButtonStyle } from './ActionButtonStyles';
 import { listState } from '../../../recoil/atom';
 
-export default function ActionButton({
-  buttonValue,
-  isSimple,
-  isSecondaryQuery,
-}) {
+export default function ActionButton({ buttonValue, isSimple }) {
   const setList = useSetRecoilState(listState);
 
   return (
@@ -18,7 +14,6 @@ export default function ActionButton({
       onClick={() =>
         setList({
           type: buttonValue,
-          isSecondaryQuery,
         })
       }
     >
@@ -30,5 +25,4 @@ export default function ActionButton({
 ActionButton.propTypes = {
   buttonValue: PropTypes.string.isRequired,
   isSimple: PropTypes.bool,
-  isSecondaryQuery: PropTypes.bool,
 };

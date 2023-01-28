@@ -17,16 +17,23 @@ export const getMovie = async (movieId) => {
 };
 
 export const getMoviesList = async (params) => {
-  const { type, isSecondaryQuery } = params;
-
-  if (isSecondaryQuery) {
-    return;
-  }
+  let response;
+  const { type } = params;
 
   try {
-    const response = await API.get(
-      `/movie/${type}?api_key=cf51a46c6ac26bd4f4c55018fdad298d`
-    );
+    if (type === 'trending') {
+      response = await API.get(
+        `/trending/movie/week?api_key=cf51a46c6ac26bd4f4c55018fdad298d`
+      );
+    } else if (type === 'upcoming') {
+      response = await API.get(
+        `/movie/upcoming?api_key=cf51a46c6ac26bd4f4c55018fdad298d`
+      );
+    } else {
+      response = await API.get(
+        `/movie/${type}?api_key=cf51a46c6ac26bd4f4c55018fdad298d`
+      );
+    }
 
     if (!response) {
       return null;

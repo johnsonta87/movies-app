@@ -10,6 +10,6 @@ export const MoviesListStyles = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 `;
