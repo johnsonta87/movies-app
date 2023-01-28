@@ -7,6 +7,8 @@ export const theme = {
     darkGrey: '#888888',
     lightGrey_1: '#dddddd',
     lightGrey_2: '#eeeeee',
+    primary: '#20B2AA',
+    primaryLight: '#66CDAA',
   },
 };
 

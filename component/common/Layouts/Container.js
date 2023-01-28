@@ -10,7 +10,7 @@ export default function Container({ children }) {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    maxWidth: '80em',
+    maxWidth: '65em',
     marginLeft: 'auto',
     marginRight: 'auto',
   },

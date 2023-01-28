@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { TitleStyles } from './TitleStyles';
 
 export default function Title({ title }) {
   if (!title) {
     return null;
   }
 
-  return <h1>{title}</h1>;
+  return <TitleStyles>{title}</TitleStyles>;
 }
 
 Title.propTypes = {

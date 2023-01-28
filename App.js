@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import Dashboard from './views/Dashboard';
 
 import { GlobalStyle, theme } from './theme/global';
+import Credits from './component/Credits/Credits';
 
 const queryClient = new QueryClient();
 
@@ -14,8 +15,9 @@ export default function App() {
       <RecoilRoot>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
-          <Dashboard />
           <StatusBar />
+          <Dashboard />
+          <Credits />
         </ThemeProvider>
       </RecoilRoot>
     </QueryClientProvider>

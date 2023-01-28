@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PopularStyle = styled.div`
+export const MoviesListStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.5em;

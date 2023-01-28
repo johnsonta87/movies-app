@@ -16,26 +16,16 @@ export const getMovie = async (movieId) => {
   }
 };
 
-export const getLatest = async () => {
-  try {
-    const response = await API.get(
-      `/movie/latest?api_key=cf51a46c6ac26bd4f4c55018fdad298d`
-    );
+export const getMoviesList = async (params) => {
+  const { type, isSecondaryQuery } = params;
 
-    if (!response) {
-      return null;
-    }
-
-    return response.data;
-  } catch (e) {
-    console.log('We have an error in services', e);
+  if (isSecondaryQuery) {
+    return;
   }
-};
 
-export const getPopular = async () => {
   try {
     const response = await API.get(
-      `/movie/popular?api_key=cf51a46c6ac26bd4f4c55018fdad298d`
+      `/movie/${type}?api_key=cf51a46c6ac26bd4f4c55018fdad298d`
     );
 
     if (!response) {

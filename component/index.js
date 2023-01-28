@@ -1,2 +1,3 @@
-export { default as Latest } from './Latest/Latest';
-export { default as Popular } from './Popular/Popular';
+export { default as Title } from './common/Title/Title';
+export { default as MoviesList } from './MoviesList/MoviesList';
+export { default as Filter } from './Filter/Filter';

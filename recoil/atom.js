@@ -1,6 +1,9 @@
 import { atom } from 'recoil';
 
-export const latestState = atom({
-  key: 'latest',
-  default: {},
+export const listState = atom({
+  key: 'list',
+  default: {
+    type: 'popular',
+    isSecondaryQuery: false,
+  },
 });

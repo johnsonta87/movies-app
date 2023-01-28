@@ -11,8 +11,6 @@ export default function MovieCardItem({ data }) {
     return null;
   }
 
-  console.log(data);
-
   return (
     <MovieCardItemStyle>
       <PosterImage url={data.poster_path} isRounded />
